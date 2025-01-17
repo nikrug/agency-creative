@@ -1,0 +1,22 @@
+@mixin font-style($font-weight,$font-syze,$line-height,$color){
+    
+    font-size: $font-syze;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color:$color;
+}
+@mixin font-styles($font-family,$font-weight,$font-syze,$line-height,$color){
+    font-family: $font-family,sans-serif;
+    font-size: $font-syze;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color:$color;
+}
+@mixin button-style($width,$height,$bk-color,$border,$border-radius){
+    width: $width;
+    height: $height;
+    background-color: $bk-color;
+    border:$border; 
+    border-radius: $border-radius;
+    cursor: pointer;
+}
