@@ -1,0 +1,69 @@
+@use '../styles/colors.scss' as *;
+@use '../styles/mixin.scss' as *;
+
+//blokcs
+.portfolio{
+ text-align: center;
+ gap:1rem;
+ display: flex;
+ flex-direction: column;
+ padding: 1rem;
+ background-color: var(--bk-color);
+}
+
+.portfolio__image-block{
+ gap:1rem;
+ display: flex;
+ flex-direction: column;
+ padding: 1rem;
+}
+
+.portfolio__image{
+    display: flex;
+    flex-direction: column; /* Ставим элементы вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    position: relative;
+    
+}
+.portfolio__image-block img {
+    width: 100%; /* Устанавливает ширину изображения на 100% от родительского контейнера */
+    height: auto; /* Сохраняет пропорции изображения */
+    max-width: 300px; /* Максимальная ширина изображения (при необходимости) */
+}
+//text
+.portfolio__title-text{
+    @include font-styles('Nunito',700, 1.5rem, 2rem,var(--description-dark));
+}
+
+.portfolio__sub-title-text{
+    @include font-styles('Quicksand',600, .875rem, 1.0625rem, var(--light-blue));
+}
+
+.portfolio__text{
+    @include font-styles('Quicksand',400, .875rem, 1.5rem,var(--description-light));
+}
+
+.servises__image-text{
+    @include font-styles('Quicksand',700, 1.5rem, 1.5rem, var(--pure-white));
+    margin-top: -3rem;
+    margin-left: -2rem; /* Сдвигаем текст вверх на нужное расстояние */
+    padding: 0rem ;
+    text-align: left;
+}
+
+@media(min-width:768px) {
+
+} 
+      
+@media(min-width:1244px){
+    .portfolio__image-block{
+        gap:1rem;
+        display: flex;
+        flex-direction: row;
+        padding: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+        
+}
+

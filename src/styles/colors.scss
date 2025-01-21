@@ -1,13 +1,25 @@
-$pure-white: #FFFFFF;
-$pure-black: #000;
-$ligth-blue:#377DFF;
-$blue: #37DBFF;
+:root {
+    --pure-white: #FFFFFF;
+    --pure-black: #000000;
+    --light-blue: #377DFF;
+    --blue: #37DBFF;
 
-$description-dark:#1D1D1D;
-$description-light:#464646;
+    --description-dark: #1D1D1D;
+    --description-light: #464646;
 
-$black-description-dark:#0D0D0D;
-$black-description-light:#E2E2E2;
+    --bk-color:#FFFFFF;
+    --pure-white-footer: #FFFFFF;
+    --footer-bk: #383638;
+    --panel-border:#0000001A;
+}
 
-
-$footer-bk:#383638;
+.darkstyle {
+    --bk-color:#000000;
+    --pure-white: #0D0D0D;  /* Цвет для темной темы */
+    --pure-black: #ff0000;  /* Цвет для темной темы */
+    --light-blue: #E2E2E2;  /* Цвет для темной темы */
+    --blue: #E2E2E2;        /* Этот цвет остаётся тем же */
+    --description-dark:#E2E2E2;
+    --description-light: #E2E2E2;
+    --panel-border:#FFFFFF1A;
+}

@@ -1,0 +1,135 @@
+@use '../styles/colors.scss' as *;
+@use '../styles/mixin.scss' as *;
+
+//blocks
+.testimonials{
+ text-align: center;
+ background-color: var(--bk-color);
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ flex-direction: column;
+ padding: 1rem;
+}
+
+.testimonials__panel-block{
+ display: flex;
+ flex-direction: row;
+ gap:1rem;
+}
+
+.testimonials__collaboration-block{
+    display: block;
+}
+
+.testimonials__collaboration-text-block{
+ margin: 3rem 0 3rem 0;
+ gap:1rem;
+
+}
+
+.testimonials__collaboration-image-block{
+    position: relative; /* Устанавливаем контекст для абсолютного позиционирования */
+   margin: 6rem 0 8rem 8rem;
+
+}
+//elements
+
+.testimonials__pannel{
+   background-color: var(--panel-bk);
+   border:1px solid var(--description-dark);
+   border-radius: 1rem;
+   display: block;
+   grid-template-columns: repeat(2, 1fr);
+   text-align: left;
+   max-width: 21.875rem;
+   padding: 2rem;
+}
+.testimonials__pannel-image{
+ display: flex;
+ flex-direction: row;
+ gap:1rem;
+ margin:1rem 1rem 1rem 0;
+
+}
+
+.testimonials__pannel-title-block{
+text-align: left;
+margin:1rem 0;
+}
+.testimonials__button{
+    @include button-style( 9.375rem, 2.375rem,var(--light-blue),1px solid var(--pure-white),1.5rem);
+    @include font-styles('Quicksand',700, .75rem, 1.125rem, var(--pure-white));
+}
+
+.pannel__show{
+    display: none;
+}
+
+.base-image {
+
+}
+
+.hover-image {
+    position: absolute; /* Абсолютное позиционирование для наложенной картинки */
+    top: 10%; /* Устанавливаем верхнюю границу по центру контейнера */
+    left: 10%; /* Устанавливаем левую границу по центру контейнера */
+    transform: translate(-66%,30%); /* Смещаем элемент обратно на 50% его ширины и высоты */
+}
+
+//text
+
+.testimonials__title-text{
+    @include font-styles('Nunito',700, 1.5rem, 2rem, var(--description-dark));
+}
+
+.testimonials__sub-title-text{
+    @include font-styles('Quicksand',600, .875rem, 1.0625rem, var(--light-blue));
+}
+
+.testimonials__text{
+    @include font-styles('Quicksand',400, .875rem, 1.5rem, var(--description-light));
+}
+
+.testimonials__pannel-title-text{
+    @include font-styles('Quicksand',600, 1.125rem, 1.375rem, var(--light-blue));
+}
+
+.testimonials__pannel-subtitle-text{
+    @include font-styles('Quicksand',400,.6875rem, .8125rem, var(--description-light));
+}
+
+.testimonials__button-text{
+    @include font-styles('Quicksand',700, .75rem, 1.125rem, var(--pure-white));
+}
+
+.testimonials__collaboration-title-text{
+    @include font-styles('Nunito',700, 1.75rem, 2.25rem, var(--description-dark));
+}
+
+@media(min-width:768px) {
+    .pannel__show{
+        display: block;
+    }
+
+    .testimonials__collaboration-block{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .testimonials__collaboration-text-block{
+        justify-items: left;
+        align-items: left;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 11rem  5rem ;
+        max-width: 15.5rem;
+    }
+} 
+      
+@media(min-width:1244px){
+
+    
+        
+}

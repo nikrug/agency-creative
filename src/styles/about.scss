@@ -1,0 +1,74 @@
+@use '../styles/colors.scss' as *;
+@use '../styles/mixin.scss' as *;
+
+//blocks
+.about{
+padding:0 1rem;
+flex-direction: column;
+display: flex;
+gap: 2rem;
+background-color: var(--bk-color);
+}
+.about__content{
+    flex-direction: column;
+    display: flex;
+    gap:3rem;
+}
+.about__title-text-block{
+ text-align: center;
+ 
+}
+
+.about__text-block{
+  text-align: left;
+  flex-direction: column;
+  display: flex;
+  gap:1rem;
+}
+
+.about__button-block{
+    display: flex; /* Используем флексбокс */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    gap:0.5rem;
+   
+ 
+}
+
+//elements
+.about__button-white{
+    @include button-style( 9.375rem, 2.375rem,var(--pure-white),1px solid var(--light-blue),1.5rem);
+    @include font-styles('Quicksand',700, .75rem, 1.125rem, var(--light-blue));
+}
+
+.about__button-blue{
+    @include button-style( 9.375rem, 2.375rem,var(--light-blue),1px solid var(--light-blue),1.5rem);
+    @include font-styles('Quicksand',700, .75rem, 1.125rem, var(--pure-white));
+}
+
+//text
+.about__title-text{
+    @include font-styles('Nunito',700, 1.5rem, 2rem, var(--description-dark));
+}
+
+.about__subtitle-text{
+    @include font-styles('Quicksand',600, .875rem, 1.0625rem, var(--light-blue));
+}
+
+.about__text{
+    @include font-styles('Quicksand',400, .875rem, 1.5rem, var(--description-light));
+}
+
+//
+@media(min-width:768px) {
+.about__content{
+flex-direction: row-reverse;
+}
+
+} 
+  
+@media(min-width:1244px){
+
+
+    
+}

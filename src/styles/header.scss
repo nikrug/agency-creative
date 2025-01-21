@@ -4,11 +4,11 @@
 .header{
     display: flex;
     width: 100%;
-    min-height: 800px;
     background-size: cover;
     background-position: center;
     flex-direction: column;
-
+    background-color: var(--bk-color);
+    padding-bottom: 3rem;
 }
 
 .header__menu{
@@ -21,48 +21,65 @@
     flex-direction: column;
     margin: 0.5rem auto 0.5rem 0.5rem;
 }
-
+.header__text-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.header__image{
+    width: 300px;
+    display: flex;
+}
 .header__content{
     display: flex;
-    gap:50px;
-    align-items: center;
-    text-align: center;
+    position: relative; // Или любое другое значение position
     flex-direction: column;
-    outline: 1px solid red;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+    padding: 1rem;
+    gap: 50px;
 }
 
 .header__button-start{
-    @include button-style( 9rem, 2.375rem,$ligth-blue,1px solid $ligth-blue,3rem);
-    @include font-styles('Quicksand',700, .75rem, 1.125rem, $pure-white);
+    @include button-style( 9rem, 2.375rem,var(--light-blue),1px solid var(--light-blue),3rem);
+    @include font-styles('Quicksand',700, .75rem, 1.125rem, var(--pure-white));
 }
 
 .header__button-start:hover{
-    @include button-style( 9rem, 2.375rem,$blue,1px solid $blue,3rem);
+    @include button-style( 9rem, 2.375rem,var(--blue),1px solid var(--blue),3rem);
 
 }
 //header text
 .header__title-text{
-    @include font-styles('Nunito',800, 1.75rem, 2.375rem, $description-dark);
+    @include font-styles('Nunito',800, 1.75rem, 2.375rem, var(--description-dark));
     
 }
 
 .header__title-text-gray{
-    @include font-styles('Nunito',400, .875rem,1.5rem, $description-light);
+    @include font-styles('Nunito',400, .875rem,1.5rem,var(--description-light));
 }
 
 .header__logo-text{
-    @include font-styles('Quicksand',700, .875rem, 1.0625rem, $description-dark);
+    @include font-styles('Quicksand',700, .875rem, 1.0625rem, var(--description-dark));
 }
 
 .header__bottom-logo-text{
-    @include font-styles('Quicksand',400, .75rem, .9375rem, $description-dark);
+    @include font-styles('Quicksand',400, .75rem, .9375rem, var(--description-dark));
 }
 //balloons
 .balloon-container {
     position: absolute;
-    margin-top: 70px ;
-    margin-bottom: 50px;
-    outline: 1px solid rgb(0, 0, 0);
+    margin-top: 80px ;
+    width: 100%;
+    height: 530px;
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+
+    z-index: 0;
+
 }
 
 .balloon {
@@ -95,25 +112,25 @@
 }
 
 .menu__text{
-     @include font-styles('Quicksand',400, .75rem, .9375rem, $description-dark);
+     @include font-styles('Quicksand',400, .75rem, .9375rem, var(--description-dark));
     margin: 2rem 1.875rem 1rem 0;
     cursor: pointer;
 }
 
 .modal__login-title-text{
-    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
 }
 
 .modal__email-password-text{
-    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
 }
 
 .modal__sign-up-text{
-    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
 }
 
 .modal__transparent-text{
-    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
 }
 
 .modal__login-icons{
@@ -182,10 +199,10 @@ height: 1.5rem;
  
 }
 .modal__email-password-container {
-    background-color: $description-dark;
+    background-color: var(--description-dark);
     border-radius: 8px;
     border: 0px;
-    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
     width: 100%;
     height: 2.75rem;
     margin-bottom: 1.875rem;
@@ -194,8 +211,8 @@ height: 1.5rem;
 .modal__login-button-modal{
     width: 90%;
     height: 3.125rem;
-    background-color:$ligth-blue ;
-    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    background-color:var(--light-blue) ;
+    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
     border-radius: 8px;
     border: none ;
 }
@@ -229,7 +246,7 @@ height: 1.5rem;
     position: absolute;
     right: 0;
     left: 0;
-    background-color: $pure-white;
+    background-color: var(--bk-color);
     max-height: 0; /* Начальная высота 0 */
     margin-top: 15px;
     z-index: 1;
@@ -254,16 +271,16 @@ height: 1.5rem;
 .menu__login-button{
     width: 30vh;
     height: 3.125rem;
-    background-color:$pure-white ;
-    @include font-styles('Quicksand',700, 1rem,1.5rem, $ligth-blue);
+    background-color:var(--bk-color) ;
+    @include font-styles('Quicksand',700, 1rem,1.5rem,var(--light-blue));
     border-radius: 3rem;
-    border: 1px solid $ligth-blue ;
+    border: 1px solid var(--light-blue) ;
     margin: 4rem 0;
 }
 
 .menu__login-button:hover{
-    @include font-styles('Quicksand',700, 1rem,1.5rem, $blue);
-    border: 1px solid $blue ;
+    @include font-styles('Quicksand',700, 1rem,1.5rem, var(--blue));
+    border: 1px solid var(--blue) ;
 }
 .show-menu{
     visibility: visible;
@@ -281,22 +298,76 @@ height: 1.5rem;
     visibility: visible;
   }
 
-  @media(min-width:768px) {
+  .welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Чтобы экран был поверх других элементов */
+    opacity: 0; /* Изначально невидим */
+    animation: fadeIn 8s forwards; /* Анимация появления */
+}
 
+.welcome-screen h2 {
+    margin: 0;
+}
+
+.welcome-screen p {
+    margin-bottom: 20px;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Полная видимость */
+    }
+}
+
+/* Анимация исчезновения */
+.fadeOut {
+    animation: fadeOut 8s forwards; /* Анимация исчезновения */
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0; /* Полная прозрачность */
+    }
+}
+
+  @media(min-width:768px) {
+    .balloon-container {
+        height: 450px;
+    }
+    .header__content{
+        display: flex;
+        max-width: 100%;
+        gap:50px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
     
     .balloon-container {
         width: 100%;
         position: absolute;
         z-index: 0;
-        margin-top: 70px ;
+        margin-top: 80px ;
         margin-bottom: 50px;
-        outline: 1px solid rgb(0, 0, 0);
+        
     }
     .dropdown-content {
         height: 30rem;
     }
       .modal{
-        background-color: $ligth-blue; 
+        background-color: var(--light-blue); 
         align-items: center;
     }
     
@@ -320,19 +391,13 @@ height: 1.5rem;
         width: 90%;
     }
 
-    .header__search-line input{
-        width: 100%;
-        height: 60px;
-    }
 
-    .header__search-line {
-        width: 600px;
-        text-align: left;
-        align-items: center;
-    }
+
+
   } 
   
   @media(min-width:1244px){
+
     .modal{
         background-color: rgba(0, 0, 0, 0.4); 
         align-items: center;
@@ -359,7 +424,7 @@ height: 1.5rem;
     }
 
     .menu__text{
-        @include font-style(500, .875rem, 1.5rem, $description-dark);
+        @include font-style(500, .875rem, 1.5rem, var(--description-dark));
         cursor: pointer;
         margin: 0 10px;
     }

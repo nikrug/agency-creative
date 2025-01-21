@@ -1,0 +1,92 @@
+@use '../styles/colors.scss' as *;
+@use '../styles/mixin.scss' as *;
+
+
+//blocks
+.servises{
+padding: 1rem;
+background-color: var(--bk-color);
+
+
+}
+
+.servises__text-block{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+text-align: center;
+}
+
+.servises__panel-block{
+  display: flex;
+  flex-direction: column;
+
+}
+
+//text
+.servises__title-text{
+    @include font-styles('Nunito',700, 1.5rem, 2rem, var(--description-dark));
+}
+
+.servises__sub-title-text{
+    @include font-styles('Quicksand',600, .875rem, 1.0625rem,var(--light-blue));
+}
+
+.servises__text{
+    @include font-styles('Quicksand',400, .875rem, 1.5rem, var(--description-light));
+}
+
+.servises__pannel-text{
+    @include font-styles('Quicksand',700, 1rem, 1.5rem,var(--description-dark));
+}
+
+//element
+
+.servises__pannel{
+    border:1px solid var(--panel-border);
+    border-radius: 1rem;
+    margin:1rem 2rem ;
+    padding: 2rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.servises__image-container {
+    position: relative; /* Устанавливаем контекст для абсолютного позиционирования */
+   margin-bottom: 1rem;
+}
+
+.servises__image-background {
+    width: 100%; /* Масштабируем фоновое изображение по ширине контейнера */
+    height: auto; /* Сохраняем пропорции изображения */
+}
+
+.servises__image-overlay {
+    position: absolute; /* Абсолютное позиционирование для наложенной картинки */
+    top: 50%; /* Устанавливаем верхнюю границу по центру контейнера */
+    left: 50%; /* Устанавливаем левую границу по центру контейнера */
+    transform: translate(-50%, -50%); /* Смещаем элемент обратно на 50% его ширины и высоты */
+    width: 60%; /* Установите ширину наложенного изображения */
+    height: auto; /* Сохраняем пропорции наложенного изображения */
+    pointer-events: none; /* Опционально, чтобы наложенное изображение не влияло на события мыши */
+}
+
+@media(min-width:768px) {
+  
+} 
+      
+@media(min-width:1244px){
+    .servises__panel-block{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .servises{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+        
+}
