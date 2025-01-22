@@ -7,15 +7,16 @@
  gap:1rem;
  display: flex;
  flex-direction: column;
- padding: 1rem;
+ padding: 5rem 1rem 5rem 1rem;
  background-color: var(--bk-color);
+
 }
 
 .portfolio__image-block{
- gap:1rem;
+ gap:2rem;
  display: flex;
  flex-direction: column;
- padding: 1rem;
+
 }
 
 .portfolio__image{
@@ -44,7 +45,7 @@
 }
 
 .servises__image-text{
-    @include font-styles('Quicksand',700, 1.5rem, 1.5rem, var(--pure-white));
+    @include font-styles('Quicksand',600, 1.5rem, 1.5rem, var(--pure-white));
     margin-top: -3rem;
     margin-left: -2rem; /* Сдвигаем текст вверх на нужное расстояние */
     padding: 0rem ;
@@ -64,6 +65,16 @@
         justify-content: center;
         align-items: center;
     }
-        
+    .portfolio__title-text{
+        @include font-styles('Nunito',700, 3.4375rem, 4.6875rem,var(--description-dark));
+    }
+    
+    .portfolio__sub-title-text{
+        @include font-styles('Quicksand',600, 1.5rem, 1.5rem, var(--light-blue));
+    }
+    
+    .portfolio__text{
+        @include font-styles('Quicksand',400, 1.25rem, 2.125rem,var(--description-light));
+    } 
 }
 

@@ -1,4 +1,37 @@
 export function initHeader() {
+   
+    const preloader = document.getElementById('preloader');
+    const content = document.getElementById('content');
+    const imageContainer = document.getElementById('image-container');
+    const animatedImage = document.getElementById('animated-image');
+
+    // Задержка в 5 секунд перед скрытием заставки
+    setTimeout(() => {
+        preloader.classList.add('hidden'); // Добавляем класс для плавного исчезновения
+        preloader.addEventListener('transitionend', () => {
+            preloader.style.display = 'none'; // Скрываем заставку
+            content.style.display = 'flex'; // Показываем содержимое
+    // Установите таймер, чтобы добавить класс после завершения первой анимации
+
+            // Показать приветственное сообщение через 1 секунду
+            setTimeout(() => {
+                welcomeMessage.style.display = 'flex'; // Показываем приветственное сообщение
+                welcomeMessage.querySelector('.slide-in').classList.add('show'); // Применяем анимацию
+
+                // Показать дополнительную информацию через 2 секунды
+                setTimeout(() => {
+                    additionalInfo.style.display = 'flex'; // Показываем дополнительную информацию
+                    additionalInfo.querySelector('.slide-in').classList.add('show'); // Применяем анимацию
+                }, 3000); // 2000 миллисекунд = 2 секунды
+            }, 1000); // 1000 миллисекунд = 1 секунда
+        });
+    }, 5000); // 5000 миллисекунд = 5 секунд
+
+    setTimeout(() => {
+        animatedImage.style.animation = 'scaleUp 1s forwards'; // Запускаем анимацию scaleUp
+        animatedImage.style.animationDelay = '0s'; // Никакой задержки для scaleUp
+    }, 10); // 3500 мс = 2 сек. задержки + 1.5 сек. для slideAndShrink
+
     // Получаем элементы
             const modal = document.querySelector(".modal");
             const openButtons = document.querySelectorAll(".click-open-modal");
@@ -152,6 +185,30 @@ function moveBalloon(balloonObj) {
 for (let i = 0; i < balloonCount; i++) {
     createBalloon(i);
 }
+
+const elements = document.querySelectorAll('.fade-in');
+
+function checkVisibility() {
+    const windowHeight = window.innerHeight;
+
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+
+        // Если элемент виден на экране
+        if (elementTop < windowHeight && elementTop > 0) {
+            element.classList.add('visible'); // Добавляем класс для появления
+        } 
+    });
+}
+
+// Проверяем видимость элементов при прокрутке
+window.addEventListener('scroll', checkVisibility);
+
+// Выполняем проверку сразу при загрузке страницы
+checkVisibility();
+
+
+
     }
 
     

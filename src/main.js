@@ -22,15 +22,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-const welcomeScreen = document.getElementById('welcomeScreen');
-
-// Убираем приветственный экран через 5 секунд
-setTimeout(() => {
-    welcomeScreen.classList.add('fadeOut'); // Добавляем класс для анимации исчезновения
-    // Удаляем элемент после завершения анимации
-    setTimeout(() => {
-        welcomeScreen.style.display = 'none'; // Скрыть приветственный экран
-    }, 8000); // Длительность анимации исчезновения
-}, 9000); 
 
  

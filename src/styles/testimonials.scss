@@ -9,6 +9,8 @@
  align-items: center;
  display: flex;
  flex-direction: column;
+ background-position: center;
+ flex-direction: column;
  padding: 1rem;
 }
 
@@ -36,8 +38,8 @@
 //elements
 
 .testimonials__pannel{
-   background-color: var(--panel-bk);
-   border:1px solid var(--description-dark);
+   background-color: var(--testimonil-card-bk);
+   border:1px solid var(--testimonil-card-border);
    border-radius: 1rem;
    display: block;
    grid-template-columns: repeat(2, 1fr);
@@ -81,6 +83,7 @@ margin:1rem 0;
 
 .testimonials__title-text{
     @include font-styles('Nunito',700, 1.5rem, 2rem, var(--description-dark));
+    margin-bottom: 3rem;
 }
 
 .testimonials__sub-title-text{
@@ -129,7 +132,37 @@ margin:1rem 0;
 } 
       
 @media(min-width:1244px){
-
+    .testimonials__title-text{
+        @include font-styles('Nunito',700,3.4375rem, 4.6875rem, var(--description-dark));
+    }
     
-        
+    .testimonials__sub-title-text{
+        @include font-styles('Quicksand',600, 1.5rem, 1.5rem, var(--light-blue));
+    }
+    
+    .testimonials__text{
+        @include font-styles('Quicksand',400, 1.125rem, 1.75rem, var(--description-light));
+    }
+    
+    .testimonials__pannel-title-text{
+        @include font-styles('Quicksand',600, 1.25rem, 2.125rem, var(--light-blue));
+    }
+    
+    .testimonials__pannel-subtitle-text{
+        @include font-styles('Quicksand',400,.6875rem, 2.125rem, var(--description-light));
+    }
+    
+    .testimonials__button-text{
+        @include font-styles('Quicksand',700, 1rem, 1.5rem, var(--pure-white));
+    }
+    
+    .testimonials__collaboration-title-text{
+        @include font-styles('Nunito',700, 3.4375rem, 4.6875rem, var(--description-dark));
+    }
+    
+    .testimonials__collaboration-image-block{
+        position: relative; /* Устанавливаем контекст для абсолютного позиционирования */
+       margin: 6rem 0 8rem 15rem;
+
+    }
 }

@@ -3,22 +3,36 @@
 
 //blocks
 .about{
-padding:0 1rem;
+    z-index: -2;
+padding: 1rem 1rem 5rem 1rem;
 flex-direction: column;
 display: flex;
 gap: 2rem;
 background-color: var(--bk-color);
+display: flex;
+position: relative; // Или любое другое значение position
+flex-direction: column;
+text-align: center;
+justify-content: center;
+align-items: center;
+
 }
 .about__content{
-    flex-direction: column;
-    display: flex;
-    gap:3rem;
+flex-direction: column;
+display: flex;
+gap: 2rem;
+position: relative; // Или любое другое значение position
+text-align: center;
+justify-content: center;
+align-items: center;
 }
 .about__title-text-block{
  text-align: center;
  
 }
-
+.about__img{
+    width: 300px;
+}
 .about__text-block{
   text-align: left;
   flex-direction: column;
@@ -68,7 +82,25 @@ flex-direction: row-reverse;
 } 
   
 @media(min-width:1244px){
+//text
+.about__title-text{
+    @include font-styles('Nunito',700, 3.4375rem, 4.6875rem, var(--description-dark));
+}
 
+.about__subtitle-text{
+    @include font-styles('Quicksand',600, 1.5rem, 1.5rem, var(--light-blue));
+}
 
-    
+.about__text{
+    @include font-styles('Quicksand',400, 1.25rem, 2rem, var(--description-light));
+}
+.about__text-block{
+ 
+    gap:1rem;
+    max-width: 600px;
+  }
+  .about__img{
+    width: 400px;
+}
+
 }

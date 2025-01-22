@@ -70,6 +70,137 @@
 .header__bottom-logo-text{
     @include font-styles('Quicksand',400, .75rem, .9375rem, var(--description-dark));
 }
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:var(--pure-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:2rem;
+    font-size: 2em;
+    z-index: 999;
+    transition: opacity 1s ease, visibility 1s ease; /* Плавный переход для исчезновения */
+    opacity: 1; /* Исходная непрозрачность */
+    visibility: visible; /* Показать элемент */
+}
+
+.header__slider-sub-title-text{
+    @include font-styles('Quicksand',400, 3.4375rem, 4.3125rem, var(--description-dark));
+}
+
+.header__slider-title-text{
+    @include font-styles('Quicksand',700, 4.3125rem, 5.1875rem, var(--description-dark));
+}
+.header__slider-text{
+    @include font-styles('Quicksand',400, 2rem, 2rem, var(--description-light));
+}
+.preloader__text-block{
+    width: 252px;
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-left: -3rem;
+    z-index: 1000;
+}
+
+.preloader__block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pure-white);
+    
+}
+
+.preloader__text-bloc-bottom{
+    width: 431px;
+    height: 168px;
+    
+}
+
+.preloader__image-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pure-white);
+    z-index: 9999;
+    margin-left: 5rem;
+    margin-right: -11rem;
+    
+}
+
+#preloader.hidden {
+    opacity: 0; /* Будет прозрачным при скрытии */
+    visibility: hidden; /* Скрыть элемент */
+}
+
+
+#content {
+    display: none; 
+    text-align: center;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-100%); /* Сдвинуть текст за пределы экрана */
+    animation: slideIn 1s forwards; /* Анимация с длительностью 0.5 секунды */
+    animation-delay: 3s; /* Задержка перед началом анимации */
+}
+
+.slide-in-bottom {
+    opacity: 0;
+    transform: translateX(-40%); /* Сдвинуть текст за пределы экрана */
+    animation: slideIn 1s forwards; /* Анимация с длительностью 0.5 секунды */
+    animation-delay: 4s; /* Задержка перед началом анимации */
+}
+
+.animated-image {
+    opacity: 0; /* Скрываем изображение в начале */
+    display: block; /* Убедитесь, что элемент отображается */
+    animation:  scaleUp 1s forwards, slideAndShrink 1.5s forwards; /* Обе анимации */
+    animation-delay: 0.3s, 2s; /* Задержка для первой анимации: 2 секунды, затем 1.5 секунды для возможности scaleUp */
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 1;
+        transform: scale(0.5); /* Начальное состояние: масштаб 0 */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Завершающее состояние: нормальный масштаб */
+    }
+}
+
+@keyframes slideAndShrink {
+    0% {
+        opacity: 1; /* Начальное состояние: невидимо */
+        transform: translateX(0%) scale(1); /* Начальная позиция */
+    }
+    100% {
+        opacity: 1; /* Конечное состояние: видно */
+        transform: translateX(-50%) scale(0.5); /* Сдвинуть и уменьшить */
+    }
+
+}
+
+
+@keyframes slideIn {
+    to {
+        opacity: 1; /* Полная непрозрачность */
+        transform: translateX(0); /* Вернуть текст в обычное положение */
+    }
+}
+
 //balloons
 .balloon-container {
     position: absolute;
@@ -99,6 +230,19 @@
     transform: translateX(-50%);
     width: 5px;
 }
+
+.fade-in {
+    opacity: 0; /* Исходное состояние: скрыто */
+    transform: translateY(20px); /* Сдвиг вниз */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Плавный переход */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Показать элемент */
+    transform: translateY(0); /* Вернуть на место */
+}
+
+
 //menu-login text
 
 .header__menu-text-header{
@@ -117,26 +261,36 @@
     cursor: pointer;
 }
 
-.modal__login-title-text{
-    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
+.modal__message-title-text{
+    @include font-styles('Nunito',800, 1.75rem, 2.375rem, var(--description-dark));
 }
 
-.modal__email-password-text{
-    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
-}
-
-.modal__sign-up-text{
-    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
+.modal__email-message-text{
+    @include font-styles('Quicksand',700, 1rem, 1.5rem, var(--light-blue));
 }
 
 .modal__transparent-text{
-    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
+    @include font-styles('Quicksand',400, .875rem, 1.5rem, var(--description-light));
+}
+.modal__attach-block {
+    white-space: nowrap; /* Предотвращает перенос строк */
 }
 
-.modal__login-icons{
-margin-right: 20px;
+.modal__attach-block img {
+    display: inline-block; /* Изображение как блочный элемент в строке */
+    vertical-align: middle; /* Выравнивание по центру по вертикали */
 }
 
+.modal__attach-block p {
+    display: inline-block; /* Текст как блочный элемент в строке */
+    margin-left: -5px; /* Отступ слева от изображения */
+    vertical-align: middle; /* Выравнивание по центру по вертикали */
+}
+
+.modal__message-container::placeholder {
+    color: var(--light-blue); /* Задаем синий цвет для плейсхолдера */
+    opacity: 1; /* Опционально: устанавливаем непрозрачность на 1, чтобы цвет был ярче */
+}
 
 .modal__remember-margin{
     margin:-1.25rem 0 4.375rem 0 ;
@@ -167,9 +321,13 @@ opacity: 1;
 
 
 }
-
+.modal__title-text-block{
+    text-align: center;
+    padding:0 1rem;
+}
 .modal__content{
-    background-color: #fefefe;
+    border: 4px solid var(--pure-white);
+    background-color: var(--bk-color);
     text-align: center;
     align-items: center;
     display: flex;
@@ -178,13 +336,14 @@ opacity: 1;
     height: 80rem;
 }
 
-.modal__img-container{
+.header__img-container{
 display: flex;
 flex-direction: row;
 height: 1.5rem;
+margin: 0rem 2rem 0;
 }
 
-.modal__login-form{
+.modal__message-form{
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -198,23 +357,44 @@ height: 1.5rem;
     height: 1.125rem;
  
 }
-.modal__email-password-container {
-    background-color: var(--description-dark);
-    border-radius: 8px;
-    border: 0px;
-    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
+.modal__email-name-container {
+   background-color: var(--bk-color);
+    border-radius: 24px;
+    border: 1px solid var(--light-blue);
+    @include font-styles('Quicksand',700, 1rem, 1.5rem, var(--light-blue));
     width: 100%;
     height: 2.75rem;
     margin-bottom: 1.875rem;
-  }
+}
+
+.modal__email-name-container::placeholder {
+    color: var(--light-blue); /* Задаем синий цвет для плейсхолдера */
+    opacity: 1; /* Опционально: устанавливаем непрозрачность на 1, чтобы цвет был ярче */
+}
+
+.modal__message-container {
+    background-color: var(--bk-color);
+    border-radius: 24px;
+    border: 1px solid var(--light-blue);
+    @include font-styles('Quicksand',700, 1rem, 1.5rem, var(--light-blue));
+    width: 100%;
+    height: 7.75rem;
+    margin-bottom: 1.875rem;
+}
+
+.modal__message-container::placeholder {
+    color: var(--light-blue); /* Задаем синий цвет для плейсхолдера */
+    opacity: 1; /* Опционально: устанавливаем непрозрачность на 1, чтобы цвет был ярче */
+}
   
-.modal__login-button-modal{
-    width: 90%;
+.modal__message-button-modal{
+    background-color:transparent ;
+    width: 13.375rem;
     height: 3.125rem;
-    background-color:var(--light-blue) ;
-    @include font-style(500, .875rem, 1.5rem, var(--description-dark));
-    border-radius: 8px;
-    border: none ;
+    margin: 2rem;
+    @include font-styles('Quicksand',700, 1rem, 1.5rem, var(--light-blue));
+    border-radius: 24px;
+    border:1px solid var(--light-blue);
 }
 
 //dropdown
@@ -341,6 +521,17 @@ height: 1.5rem;
 }
 
   @media(min-width:768px) {
+    .modal__message-title-text{
+        @include font-styles('Nunito',700, 3.4375rem, 4.6875rem, var(--description-dark));
+    }
+    
+    .modal__email-message-text{
+        @include font-styles('Quicksand',700, 1rem, 1.5rem, var(--light-blue));
+    }
+    
+    .modal__transparent-text{
+        @include font-styles('Quicksand',400, 1.25rem, 2rem, var(--description-light));
+    }
     .balloon-container {
         height: 450px;
     }
@@ -380,11 +571,12 @@ height: 1.5rem;
     .modal__content{
         z-index: 1000;
         margin: 100px auto ;
-        width: 30rem; 
-        height: 43.125rem;
+        width: 40rem; 
+        height: 45.0625rem;
         gap: 20px; /* Задаем расстояние между элементами */
         border-radius: 9px;
         padding-bottom: 16px;
+        padding: 1rem;
     }
     
     .modal__login-form{
@@ -397,7 +589,11 @@ height: 1.5rem;
   } 
   
   @media(min-width:1244px){
-
+    .header__img-container{
+        display: none;
+        flex-direction: row;
+        height: 1.5rem;
+        }
     .modal{
         background-color: rgba(0, 0, 0, 0.4); 
         align-items: center;
@@ -453,6 +649,35 @@ height: 1.5rem;
       .dropdown-content {
         visibility: hidden;
     }
-
+    .header__title-text{
+        @include font-styles('Nunito',800, 4rem, 5.4375rem, var(--description-dark));
+        
+    }
     
+    .header__title-text-gray{
+        @include font-styles('Nunito',400, 1.25rem,1.875rem,var(--description-light));
+    }
+    
+    .header__logo-text{
+        @include font-styles('Quicksand',700, 1.25rem, 1.5rem, var(--description-dark));
+    }
+    
+    .header__bottom-logo-text{
+        @include font-styles('Quicksand',400, 1rem, 1.25rem, var(--description-dark));
+    }
+    .menu__text{
+        @include font-styles('Quicksand',400, 1.125rem, 1.5rem, var(--description-dark));
+   }
+   .header__text-block{
+width: 850px;
+
+}
+.header__image{
+    width: 500px;
+    display: flex;
+}
+.modal__title-text-block{
+    
+    padding:0 2rem;
+}
   }
