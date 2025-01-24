@@ -7,8 +7,11 @@ import './styles/testimonials.scss';
 import './styles/footer.scss';
 import './styles/fonts.scss';
 import { initHeader } from './header.js'; 
+import { initLang } from './lang.js';
+import { initAnimation } from './animation.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
+    
     const includeElements = document.querySelectorAll("include");
     
     for (const el of includeElements) {
@@ -17,8 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         const content = await response.text();
         el.outerHTML = content; // Заменяет элемент include на загруженное содержимое 
     }
-
+    initAnimation();
+    initLang();
     initHeader(); // Инициализация после того, как весь контент загружен и добавлен в DOM
+  
+    
+
 });
 
 

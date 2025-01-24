@@ -151,7 +151,7 @@
 
 .slide-in {
     opacity: 0;
-    transform: translateX(-100%); /* Сдвинуть текст за пределы экрана */
+    transform: translateX(-90%); /* Сдвинуть текст за пределы экрана */
     animation: slideIn 1s forwards; /* Анимация с длительностью 0.5 секунды */
     animation-delay: 3s; /* Задержка перед началом анимации */
 }
@@ -669,7 +669,8 @@ margin: 0rem 2rem 0;
         @include font-styles('Quicksand',400, 1.125rem, 1.5rem, var(--description-dark));
    }
    .header__text-block{
-width: 850px;
+width: 940px;
+gap:1rem;
 
 }
 .header__image{
