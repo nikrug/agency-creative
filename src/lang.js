@@ -251,7 +251,7 @@ function updateText(lang) {
       if (element) {
           element.innerHTML = langArr[key][lang];
       } else {
-          console.error(`Элемент с атрибутом lng="${key}" не найден.`);
+          
       }
   }
 }
@@ -261,5 +261,3 @@ initializeLanguage();
   }
 
   
-  
-          

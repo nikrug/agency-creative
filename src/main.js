@@ -7,7 +7,7 @@ import './styles/testimonials.scss';
 import './styles/footer.scss';
 import './styles/fonts.scss';
 import { initHeader } from './header.js'; 
-import { initLang } from './lang.js';
+import  {initLang}  from './lang.js';
 import { initAnimation } from './animation.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
