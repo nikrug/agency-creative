@@ -6,9 +6,10 @@ import './styles/portfolio.scss';
 import './styles/testimonials.scss';
 import './styles/footer.scss';
 import './styles/fonts.scss';
-import { initHeader } from './header.js'; 
-import  {initLang}  from './lang.js';
-import { initAnimation } from './animation.js';
+import './styles/animations.scss';
+import { initHeader } from './js/header.js'; 
+import  {initLang}  from './js/lang.js';
+import { initAnimation } from './js/animation.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
     

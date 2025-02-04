@@ -6,8 +6,6 @@
 .servises{
 padding: 1rem;
 background-color: var(--bk-color);
-
-
 }
 
 .servises__text-block{
@@ -25,15 +23,18 @@ text-align: center;
 
 //text
 .servises__title-text{
-    @include font-styles('Nunito',700, 1.5rem, 2rem, var(--description-dark));
+    @include font-styles('Nunito',700, none, none, var(--description-dark));
+    @include t-title;
 }
 
 .servises__sub-title-text{
-    @include font-styles('Quicksand',600, .875rem, 1.0625rem,var(--light-blue));
+    @include font-styles('Quicksand',600, none, none, var(--light-blue));
+    @include t-sub-title;
 }
 
 .servises__text{
-    @include font-styles('Quicksand',400, .875rem, 1.5rem, var(--description-light));
+    @include font-styles('Quicksand',400, none, none, var(--description-light));
+    @include t-text;
 }
 
 .servises__pannel-text{
@@ -87,18 +88,7 @@ text-align: center;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .servises__title-text{
-        @include font-styles('Nunito',700, 3.4375rem, 4.4375rem, var(--description-dark));
-    }
-    
-    .servises__sub-title-text{
-        @include font-styles('Quicksand',600, 1.5rem, 1.5rem,var(--light-blue));
-    }
-    
-    .servises__text{
-        @include font-styles('Quicksand',400, 1.25rem, 2rem, var(--description-light));
-    }
-    
+   
     .servises__pannel-text{
         @include font-styles('Quicksand',700, 1.5rem, 2.125rem,var(--description-dark));
     }

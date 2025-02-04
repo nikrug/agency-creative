@@ -20,3 +20,48 @@
     border-radius: $border-radius;
     cursor: pointer;
 }
+
+@mixin t-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  
+    @media (min-width: 768px) { // для планшетов
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+  
+    @media (min-width: 1200px) { // для больших настольных устройств
+        font-size: 3.4375rem;
+        line-height: 4.4375rem;
+    }
+  }
+  
+  @mixin t-text {
+    font-size: .875rem;
+    line-height: 1.5rem;
+  
+    @media (min-width: 768px) { // для планшетов
+      
+    }
+  
+    @media (min-width: 1200px) { // для больших настольных устройств
+      font-size:  1.25rem;
+      line-height: 2rem;
+    }
+
+    
+}
+
+@mixin t-sub-title {
+    font-size: .875rem;
+    line-height:1.0625rem;
+  
+    @media (min-width: 768px) { // для планшетов
+      
+    }
+  
+    @media (min-width: 1200px) { // для больших настольных устройств
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+}

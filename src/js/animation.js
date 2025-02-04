@@ -1,5 +1,4 @@
 export function initAnimation() {
-   
     const preloader = document.getElementById('preloader');
     const content = document.getElementById('content');
     const imageContainer = document.getElementById('image-container');

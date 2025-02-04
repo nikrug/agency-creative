@@ -62,15 +62,18 @@ align-items: center;
 
 //text
 .about__title-text{
-    @include font-styles('Nunito',700, 1.5rem, 2rem, var(--description-dark));
+    @include font-styles('Nunito',700, none, none, var(--description-dark));
+    @include t-title;
 }
 
 .about__subtitle-text{
-    @include font-styles('Quicksand',600, .875rem, 1.0625rem, var(--light-blue));
+    @include font-styles('Quicksand',600, none, none, var(--light-blue));
+    @include t-sub-title;
 }
 
 .about__text{
-    @include font-styles('Quicksand',400, .875rem, 1.5rem, var(--description-light));
+    @include font-styles('Quicksand',400, none, none, var(--description-light));
+    @include t-text;
 }
 
 //
@@ -81,19 +84,7 @@ flex-direction: row-reverse;
 
 } 
   
-@media(min-width:1244px){
-//text
-.about__title-text{
-    @include font-styles('Nunito',700, 3.4375rem, 4.6875rem, var(--description-dark));
-}
-
-.about__subtitle-text{
-    @include font-styles('Quicksand',600, 1.5rem, 1.5rem, var(--light-blue));
-}
-
-.about__text{
-    @include font-styles('Quicksand',400, 1.25rem, 2rem, var(--description-light));
-}
+@media(min-width:1024px){
 .about__text-block{
  
     gap:1rem;

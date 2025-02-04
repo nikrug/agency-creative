@@ -57,22 +57,34 @@ export function initHeader() {
         localStorage.setItem('styleMode',null);
        }
 
+       
+
        styleToggle.addEventListener('click',() => {
         styleMode = localStorage.getItem('styleMode');
         if(styleMode !== 'dark'){
             enableDarkStyle();
+            closeButtons.classList.add("svg-invert-color");
+           
         }else{
             disableDarkStyle();
+            
+            closeButtons.classList.remove("svg-invert-color");
+           
         }
        });
 
        if (styleMode === 'dark'){
+
         enableDarkStyle();
+        closeButtons.classList.add("svg-invert-color");
+    
        }
 
 
+    }
 
-}
+
+
 
     
     
